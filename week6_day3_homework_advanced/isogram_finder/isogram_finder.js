@@ -16,7 +16,7 @@ IsogramFinder.prototype.isIsogram = function() {
       if (a.indexOf(c) == i) {
         return c;
       }
-    })
+    });
 
     if (letters_processed != null)  {
       if (letters.length === letters_processed.length) {
@@ -30,7 +30,7 @@ IsogramFinder.prototype.isIsogram = function() {
     }
 };
 
-// 
+//
 // const isogramFinder = new IsogramFinder('subdermatoglyphic');
 // console.log(isogramFinder.isIsogram());
 

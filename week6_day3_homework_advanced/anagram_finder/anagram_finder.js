@@ -25,18 +25,22 @@ AnagramFinder.prototype.findAnagrams = function (otherWords) {
     if (word !== word_to_test) {
       // and if the length of two strings is the same
       if (word.length === word_to_test.length) {
-          // the two strings have to have the same characters, thus same length, regardless the order or characters
+
+          word_letters = word_letters.map((word) => {
+            return word.toLowerCase();
+          })
 
           word_to_test_letters = word_to_test.match(reg_exp);
 
           word_to_test_letters_processed =  word_to_test_letters.filter((letter) => {
-            // if a letetr of given word is a valid index of main word letters array, then add to filtered array
-            if (word_letters.indexOf(letter) === -1) {
+
+
+            if (word_letters.indexOf(letter.toLowerCase()) === -1) {
               false
             } else {
                 return letter;
             }
-            // if after filtering lengths are the same, its an anagranm
+
           });
 
           if (word.length === word_to_test_letters_processed.length) {
@@ -45,7 +49,6 @@ AnagramFinder.prototype.findAnagrams = function (otherWords) {
 
         }
 
-                        // if after filtering through letters of given word,
     }
 
 
@@ -66,10 +69,10 @@ AnagramFinder.prototype.findAnagrams = function (otherWords) {
 
 module.exports = AnagramFinder;
 
+// //
+// const anagramFinder = new AnagramFinder('DeduCTionS');
 //
-// const anagramFinder = new AnagramFinder('act');
-//
-// console.log(anagramFinder.findAnagrams(['mat', 'dat']));
+// console.log(anagramFinder.findAnagrams(['DiscOUnteD']));
 
 
 //
