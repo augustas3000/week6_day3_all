@@ -71,12 +71,21 @@ Cinema.prototype.filter_by_year = function(year_num) {
 // should be able to check whether all films are over a particular length
 
 Cinema.prototype.ok_length = function(length_num) {
+  // 
+
+
+
+
+
   let films_array = this.films;
   let length_confirmed = 'n';
   let resulting_item = {};
   let title = "";
   let counter = 0;
   // {'Black Panther': 'y'}
+
+
+
 
   let films_analysed = films_array.map((film_obj) => {
     resulting_item = {};
@@ -94,12 +103,11 @@ Cinema.prototype.ok_length = function(length_num) {
   });
 
 
-
   if (counter > 0) {
 
     // `Not all the films are over ${length_num}`;
     let not_passed = films_analysed.filter((film) => {
-    
+
       return film.a === 'n';
     });
 
